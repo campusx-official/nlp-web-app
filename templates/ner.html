@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>NER</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
 
-  <form action="/perform_ner" method="post">
-      <label>Type your text here</label><br>
-      <textarea name="ner_text"></textarea><br>
-      <input type="submit" value="Perform NER">
-  </form>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
 
-  {% if response %}
-    {% for i in response['entities']: %}
-        <p>{{ i['name'] + " ==> " + i['category'] }}</p>
-    {% endfor %}
-  {% endif %}
+    <div class="bg-white p-8 rounded shadow-lg max-w-md w-full">
+        <form action="/perform_ner" method="post" class="mb-8">
+            <label class="block mb-1 font-bold text-gray-700">Type your text here</label>
+            <textarea name="ner_text" class="w-full p-2 border border-gray-300 rounded" required></textarea>
+            <div class="text-center mt-4">
+                <input type="submit" value="Perform NER" class="bg-blue-500 text-white py-2 px-4 rounded cursor-pointer hover:bg-blue-700">
+            </div>
+        </form>
+
+        {% if response %}
+            <div class="mt-4">
+                {% for i in response['entities'] %}
+                    <p>{{ i['name'] }} ==> {{ i['category'] }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
 
 </body>
+
 </html>
