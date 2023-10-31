@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Profile</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
 
-    <p>What would you like to do</p>
-    <ul>
-        <li><a href="/ner">NER</a></li>
-        <li>Sentiment Analysis</li>
-        <li>Abuse Detection</li>
-    </ul>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+
+    <div class="bg-white p-8 rounded shadow-lg max-w-md w-full">
+        <p class="text-xl mb-4 text-center">What would you like to do</p>
+        <ul class="list-disc pl-4 mb-4">
+            <li><a href="/ner" class="text-blue-500">NER</a></li>
+            <li>Sentiment Analysis</li>
+            <li>Abuse Detection</li>
+        </ul>
+    </div>
 
 </body>
+
 </html>

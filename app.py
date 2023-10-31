@@ -3,7 +3,7 @@ from db import Database
 import api
 
 app = Flask(__name__)
-
+app.secret_key="a9d72579e44162b055e3e937ec8bc093"
 dbo = Database()
 
 @app.route('/')
